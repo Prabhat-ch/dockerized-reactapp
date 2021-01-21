@@ -1,0 +1,15 @@
+#the docker compose file version
+version: "3.7"
+services:
+  react-testapp:
+    container_name: react-testapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    environment:
+      - NODE_ENV=development
