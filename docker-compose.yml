@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  react-testapp:
+    container_name: react-testapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
