@@ -1,0 +1,15 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: EKS-cluster
+  region: ap-south-1
+
+nodeGroups:
+  - name: ng-1
+    labels: { role: workers }
+    instanceType: t3.small
+    desiredCapacity: 2
+    privateNetworking: true
+    ssh:
+      publicKeyName: ekskp
